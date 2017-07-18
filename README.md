@@ -1,12 +1,10 @@
-Commons
-=======
-A common library for Android
+# android-commons
+A common library for Android.
 
 
-Download
---------
+## Download
 
-Download [the latest JAR][1] or grab via Gradle:
+Download [the latest JAR](https://bintray.com/yh-kim/commons/commons#files/com/pickth/commonsT) or grab via Gradle:
 ```groovy
 compile 'com.pickth:commons:1.0'
 ```
@@ -20,8 +18,7 @@ or Maven:
 </dependency>
 ```
 
-License
---------
+## License
 
     Copyright 2017 Yonghoon Kim
 
@@ -36,5 +33,3 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
- [1]: https://bintray.com/yh-kim/commons/commons#files/com/pickth/commonsT

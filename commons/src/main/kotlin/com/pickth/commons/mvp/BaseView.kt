@@ -1,6 +1,4 @@
-package com.pickth.commons.activities
-
-import android.support.v7.app.AppCompatActivity
+package com.pickth.commons.mvp
 
 /**
  * Created by yonghoon on 2017-07-18.
@@ -8,5 +6,6 @@ import android.support.v7.app.AppCompatActivity
  * Github : https://github.com/yh-kim
  * Mail   : yonghoon.kim@pickth.com
  */
-abstract class BaseActivity: AppCompatActivity() {
+interface BaseView<T> {
+    fun setPresenter(presenter: T)
 }

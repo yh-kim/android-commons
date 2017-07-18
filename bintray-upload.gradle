@@ -10,7 +10,9 @@ install {
         pom.project {
             packaging 'aar'
             name 'android-commons'
+            version version
             description = 'Is common library'
+
 
             licenses {
                 license {
@@ -40,10 +42,6 @@ task sourcesJar(type: Jar) {
 
 artifacts {
     archives sourcesJar
-}
-
-task findConventions << {
-    println project.getConvention()
 }
 
 Properties properties = new Properties()
