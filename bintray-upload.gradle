@@ -1,0 +1,74 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = "com.pickth"
+version = propVersionName
+// compile 'group:moduleName:version name' 의 형태로 사용됨
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging 'aar'
+            name 'android-commons'
+            description = 'Is common library'
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                }
+            }
+            developers {
+                developer {
+                    id 'yh-kim'
+                    name 'Yonghoon Kim'
+                    email 'yonghoon.kim@pickth.com'
+                }
+            }
+            scm {
+                connection 'https://github.com/yh-kim/android-commons'
+                developerConnection 'https://github.com/yh-kim/android-commons'
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+task findConventions << {
+    println project.getConvention()
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = "commons"
+        name = "commons"
+        userOrg = "comepenny"
+        vcsUrl = 'https://github.com/yh-kim/android-commons'
+        licenses = ["Apache-2.0"]
+        publish = true
+        version {
+            name = version
+            desc = version
+            vcsTag = version
+
+            gpg {
+                sign = true
+            }
+        }
+    }
+}
