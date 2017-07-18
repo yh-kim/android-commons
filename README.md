@@ -6,14 +6,14 @@ A common library for Android.
 
 Download [the latest JAR](https://bintray.com/yh-kim/commons/commons#files/com/pickth/commonsT) or grab via Gradle:
 ```groovy
-compile 'com.pickth:commons:1.0'
+compile 'com.pickth:commons:1.0.1'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>com.pickth</groupId>
   <artifactId>commons</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
