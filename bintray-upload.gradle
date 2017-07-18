@@ -57,7 +57,6 @@ bintray {
     pkg {
         repo = "commons"
         name = "commons"
-        userOrg = "comepenny"
         vcsUrl = 'https://github.com/yh-kim/android-commons'
         licenses = ["Apache-2.0"]
         publish = true
