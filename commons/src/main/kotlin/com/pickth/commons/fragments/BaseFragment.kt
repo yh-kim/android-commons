@@ -1,4 +1,4 @@
-package com.pickth.commons.view
+package com.pickth.commons.fragments
 
 import android.support.v4.app.Fragment
 

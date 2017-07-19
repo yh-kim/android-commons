@@ -1,4 +1,4 @@
-package com.pickth.commons.view
+package com.pickth.commons.activities
 
 import android.support.v7.app.AppCompatActivity
 
