@@ -1,11 +1,9 @@
-package com.pickth.commons.activities
+package com.pickth.commons.view
 
 import android.support.v7.app.AppCompatActivity
 
 /**
  * Created by yonghoon on 2017-07-18.
- * Blog   : http://blog.pickth.com
- * Github : https://github.com/yh-kim
  * Mail   : yonghoon.kim@pickth.com
  */
 abstract class BaseActivity: AppCompatActivity() {

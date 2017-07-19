@@ -3,6 +3,8 @@ package com.pickth.commons.extensions
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
@@ -11,10 +13,16 @@ import android.widget.Toast
 
 /**
  * Created by yonghoon on 2017-07-18.
- * Blog   : http://blog.pickth.com
- * Github : https://github.com/yh-kim
  * Mail   : yonghoon.kim@pickth.com
  */
+fun Activity.addFragmentToActivity(fragmentManager: FragmentManager, fragment: Fragment, frameId: Int) {
+    checkNotNull(fragmentManager)
+    checkNotNull(fragment)
+    val transaction = fragmentManager.beginTransaction()
+    transaction.add(frameId, fragment)
+    transaction.commit()
+}
+
 fun Activity.toast(id: Int, length: Int = Toast.LENGTH_SHORT) {
     if(isOnMainThread()) {
         Toast.makeText(this, id, length).show()
