@@ -5,5 +5,4 @@ package com.pickth.commons.mvp
  * Mail   : yonghoon.kim@pickth.com
  */
 interface BaseView<T> {
-    fun setPresenter(presenter: T)
 }
