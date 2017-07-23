@@ -12,8 +12,8 @@ import android.widget.EditText
 import android.widget.Toast
 
 /**
- * Created by yonghoon on 2017-07-18.
- * Mail   : yonghoon.kim@pickth.com
+ * @param fragmentManager in activity. Called by getFragmentManager
+ * @param fragment
  */
 fun Activity.addFragmentToActivity(fragmentManager: FragmentManager, fragment: Fragment, frameId: Int) {
     checkNotNull(fragmentManager)
