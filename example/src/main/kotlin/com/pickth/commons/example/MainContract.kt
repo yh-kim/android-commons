@@ -16,5 +16,15 @@
 
 package com.pickth.commons.example
 
-class MainContract {
+import com.pickth.commons.mvp.BasePresenter
+import com.pickth.commons.mvp.BaseView
+
+interface MainContract {
+    interface View: BaseView<Presenter> {
+        fun showText(msg: String)
+    }
+
+    interface Presenter: BasePresenter {
+        fun test()
+    }
 }

@@ -18,12 +18,21 @@ package com.pickth.commons.example
 
 import android.os.Bundle
 import com.pickth.commons.activities.BaseActivity
+import com.pickth.commons.extensions.toast
 
 class MainActivity: BaseActivity(), MainContract.View {
+    override fun showText(msg: String) {
+        toast(msg)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var presenter = MainPresenter()
+        presenter.attachView(this)
+
+        presenter.test()
     }
 
 }

@@ -16,5 +16,17 @@
 
 package com.pickth.commons.example
 
-class MainPresenter {
+import com.pickth.commons.mvp.BaseView
+
+class MainPresenter: MainContract.Presenter {
+
+    lateinit private var mView: MainContract.View
+
+    override fun attachView(view: BaseView<*>) {
+        this.mView = view as MainContract.View
+    }
+
+    override fun test() {
+        mView.showText("is test")
+    }
 }
