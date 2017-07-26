@@ -18,21 +18,15 @@ package com.pickth.commons.example
 
 import android.os.Bundle
 import com.pickth.commons.activities.BaseActivity
-import com.pickth.commons.extensions.toast
+import com.pickth.commons.extensions.addFragmentToActivity
 
-class MainActivity: BaseActivity(), MainContract.View {
-    override fun showText(msg: String) {
-        toast(msg)
-    }
+class MainActivity: BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var presenter = MainPresenter()
-        presenter.attachView(this)
-
-        presenter.test()
+        addFragmentToActivity(supportFragmentManager, MainFragment(), R.id.fl_main)
     }
 
 }
