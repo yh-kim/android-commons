@@ -28,7 +28,7 @@ import android.widget.EditText
 import android.widget.Toast
 
 /**
- * @param fragmentManager in activity. Called by getFragmentManager
+ * @param fragmentManager in activity. Called by getSupportFragmentManager
  * @param fragment
  */
 fun Activity.addFragmentToActivity(fragmentManager: FragmentManager, fragment: Fragment, frameId: Int) {
