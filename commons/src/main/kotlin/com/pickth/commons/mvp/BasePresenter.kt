@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pickth.commons.view.mvp
+package com.pickth.commons.mvp
 
 interface BasePresenter {
     fun attachView(view: BaseView<*>)
