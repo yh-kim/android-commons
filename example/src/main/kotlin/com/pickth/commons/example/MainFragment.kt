@@ -25,6 +25,7 @@ import com.pickth.commons.view.fragments.BaseFragment
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class MainFragment: BaseFragment(), MainContract.View {
+
     private lateinit var mTvMainText: TextView
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,12 +34,15 @@ class MainFragment: BaseFragment(), MainContract.View {
         mTvMainText = rootView.tv_main_text
 
         var presenter = MainPresenter()
-        presenter.attachView(this)
-
-        presenter.test()
-
+                .apply {
+                    attachView(this@MainFragment)
+                    test()
+                }
 
         return rootView
+    }
+
+    override fun start() {
     }
 
     override fun showText(msg: String) {

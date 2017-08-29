@@ -23,7 +23,8 @@ class MainPresenter: MainContract.Presenter {
     lateinit private var mView: MainContract.View
 
     override fun attachView(view: BaseView<*>) {
-        this.mView = view as MainContract.View
+        mView = view as MainContract.View
+        mView.start()
     }
 
     override fun test() {
