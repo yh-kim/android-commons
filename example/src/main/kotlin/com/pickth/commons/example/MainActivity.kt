@@ -17,7 +17,7 @@
 package com.pickth.commons.example
 
 import android.os.Bundle
-import com.pickth.commons.activities.BaseActivity
+import com.pickth.commons.view.activitys.BaseActivity
 import com.pickth.commons.extensions.addFragmentToActivity
 
 class MainActivity: BaseActivity() {

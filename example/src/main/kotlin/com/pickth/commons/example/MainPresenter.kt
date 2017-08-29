@@ -16,7 +16,7 @@
 
 package com.pickth.commons.example
 
-import com.pickth.commons.mvp.BaseView
+import com.pickth.commons.view.mvp.BaseView
 
 class MainPresenter: MainContract.Presenter {
 

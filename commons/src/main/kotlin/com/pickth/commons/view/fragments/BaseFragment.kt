@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.pickth.commons.mvp
+package com.pickth.commons.view.fragments
 
-interface BasePresenter {
-    fun attachView(view: BaseView<*>)
+import android.support.v4.app.Fragment
+
+abstract class BaseFragment: Fragment() {
 }

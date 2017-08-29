@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pickth.commons.mvp
+package com.pickth.commons.view.mvp
 
 interface BaseView<T> {
 }

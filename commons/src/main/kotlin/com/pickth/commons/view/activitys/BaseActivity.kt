@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pickth.commons.activities
+package com.pickth.commons.view.activitys
 
 import android.support.v7.app.AppCompatActivity
 

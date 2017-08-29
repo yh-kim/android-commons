@@ -21,7 +21,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.pickth.commons.fragments.BaseFragment
+import com.pickth.commons.view.fragments.BaseFragment
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class MainFragment: BaseFragment(), MainContract.View {
