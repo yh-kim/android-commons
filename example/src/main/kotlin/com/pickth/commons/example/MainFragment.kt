@@ -17,22 +17,25 @@
 package com.pickth.commons.example
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
+import com.pickth.commons.example.adapter.MainItemAdapter
 import com.pickth.commons.view.fragments.BaseFragment
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class MainFragment: BaseFragment(), MainContract.View {
-
-    private lateinit var mTvMainText: TextView
+    private var mAdapter = MainItemAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var rootView = inflater.inflate(R.layout.fragment_main, container, false)
 
-        mTvMainText = rootView.tv_main_text
-
+        rootView.rv_main.apply {
+            adapter = mAdapter
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        }
         var presenter = MainPresenter()
                 .apply {
                     attachView(this@MainFragment)
@@ -46,7 +49,9 @@ class MainFragment: BaseFragment(), MainContract.View {
     }
 
     override fun showText(msg: String) {
-        mTvMainText.text = msg
+        mAdapter.addItem(msg)
+        mAdapter.notifyDataSetChanged()
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
 
 }

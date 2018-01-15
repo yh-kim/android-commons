@@ -18,6 +18,8 @@ package com.pickth.commons.extensions
 
 import android.content.Context
 import android.os.Looper
+import android.support.v4.content.ContextCompat
+import android.view.LayoutInflater
 
 fun Context.isOnMainThread() = Looper.myLooper() == Looper.getMainLooper()
 
@@ -28,3 +30,5 @@ fun Context.convertPixelToDp(px: Int): Int = convertPixelToDp(px.toFloat()).toIn
 fun Context.convertDpToPixel(dp: Float): Float = dp * resources.displayMetrics.density
 
 fun Context.convertDpToPixel(dp: Int): Int = convertDpToPixel(dp.toFloat()).toInt()
+
+fun Context.getColor(id: Int) = ContextCompat.getColor(this, id)

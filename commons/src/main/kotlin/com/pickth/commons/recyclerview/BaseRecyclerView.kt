@@ -18,6 +18,7 @@ package com.pickth.commons.recyclerview
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.view.ViewGroup
 import java.util.ArrayList
 
 /**
@@ -27,23 +28,23 @@ import java.util.ArrayList
 
 class BaseRecyclerView {
 
-    abstract class BaseAdapter<ITEM: Class<*>>: RecyclerView.Adapter<BaseRecyclerView.BaseViewHolder>() {
-        private var mItems = ArrayList<ITEM>()
+    abstract class BaseAdapter<ITEM>: RecyclerView.Adapter<BaseRecyclerView.BaseViewHolder<ITEM>>() {
+        protected var arrItems = ArrayList<ITEM>()
 
-        fun getItems() = mItems
+        fun getItems(): ArrayList<ITEM> = arrItems
 
-        fun getItem(position: Int) = mItems[position]
+        fun getItem(position: Int) = arrItems[position]
 
         fun addItemAtLast(item: ITEM) {
-            mItems.add(itemCount, item)
+            arrItems.add(itemCount, item)
         }
 
         fun addItem(item: ITEM) {
-            mItems.add(item)
+            arrItems.add(item)
         }
     }
 
-    abstract class BaseViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        abstract fun onBind()
+    abstract class BaseViewHolder<ITEM>(view: View): RecyclerView.ViewHolder(view) {
+        abstract fun onBind(item: ITEM)
     }
 }
