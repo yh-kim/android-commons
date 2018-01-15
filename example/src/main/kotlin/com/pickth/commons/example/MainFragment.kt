@@ -28,8 +28,8 @@ class MainFragment: BaseFragment(), MainContract.View {
 
     private lateinit var mTvMainText: TextView
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var rootView = inflater!!.inflate(R.layout.fragment_main, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        var rootView = inflater.inflate(R.layout.fragment_main, container, false)
 
         mTvMainText = rootView.tv_main_text
 

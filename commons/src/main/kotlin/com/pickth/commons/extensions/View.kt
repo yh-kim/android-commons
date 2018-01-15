@@ -16,6 +16,8 @@
 
 package com.pickth.commons.extensions
 
+import android.graphics.drawable.GradientDrawable
+import android.os.Build
 import android.view.View
 
 fun View.beInvisible() { visibility = View.INVISIBLE }
@@ -23,3 +25,10 @@ fun View.beInvisible() { visibility = View.INVISIBLE }
 fun View.beVisible() { visibility = View.VISIBLE }
 
 fun View.beGone() { visibility = View.GONE }
+
+fun View.setBackgroundColorWithRadius(color: Int, dpValue: Int) {
+    background = GradientDrawable().apply {
+        setColor(color)
+        cornerRadius = context.convertDpToPixel(dpValue.toFloat())
+    }
+}
