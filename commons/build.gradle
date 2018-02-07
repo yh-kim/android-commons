@@ -23,6 +23,11 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    compileOptions {
+        // To avoid an issue like the one fixed by
+        // https://github.com/JakeWharton/RxBinding/pull/354.
+        kotlinOptions.freeCompilerArgs = ['-module-name', "my-commons"]
+    }
 }
 
 dependencies {

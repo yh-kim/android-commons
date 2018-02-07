@@ -19,4 +19,5 @@ package com.pickth.commons.view.fragments
 import android.support.v4.app.Fragment
 
 abstract class BaseFragment: Fragment() {
+    val TAG = javaClass.simpleName
 }

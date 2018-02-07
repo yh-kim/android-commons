@@ -16,15 +16,14 @@
 
 package com.pickth.commons.example
 
-import com.pickth.commons.mvp.BaseView
+class MainPresenter(private val mView: MainContract.View): MainContract.Presenter {
 
-class MainPresenter: MainContract.Presenter {
+    init {
+        mView.setPresenter(this)
+    }
 
-    lateinit private var mView: MainContract.View
+    override fun start() {
 
-    override fun attachView(view: BaseView<*>) {
-        mView = view as MainContract.View
-        mView.start()
     }
 
     override fun test() {

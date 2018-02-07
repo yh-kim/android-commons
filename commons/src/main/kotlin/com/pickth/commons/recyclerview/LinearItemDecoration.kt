@@ -14,22 +14,12 @@
  * limitations under the License.
  */
 
-package com.pickth.commons.example
+package com.pickth.commons.recyclerview
 
-import android.os.Bundle
-import com.pickth.commons.view.activitys.BaseActivity
-import com.pickth.commons.extensions.addFragmentToActivity
+/**
+ * Created by yonghoon on 2018-01-30
+ * Blog   : http://blog.pickth.com
+ */
 
-class MainActivity: BaseActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val fragment = MainFragment()
-        addFragmentToActivity(supportFragmentManager, fragment, R.id.fl_main)
-
-        var presenter = MainPresenter(fragment)
-    }
-
+class LinearItemDecoration {
 }

@@ -19,4 +19,5 @@ package com.pickth.commons.view.activitys
 import android.support.v7.app.AppCompatActivity
 
 abstract class BaseActivity: AppCompatActivity() {
+    val TAG = javaClass.simpleName
 }

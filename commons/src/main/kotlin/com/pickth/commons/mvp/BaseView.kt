@@ -17,5 +17,7 @@
 package com.pickth.commons.mvp
 
 interface BaseView<T> {
-    fun start()
+    var mPresenter: T
+
+    fun setPresenter(presenter: T)
 }

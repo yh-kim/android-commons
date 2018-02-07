@@ -17,5 +17,5 @@
 package com.pickth.commons.mvp
 
 interface BasePresenter {
-    fun attachView(view: BaseView<*>)
+    fun start()
 }

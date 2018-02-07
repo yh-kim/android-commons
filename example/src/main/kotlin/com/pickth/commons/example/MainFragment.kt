@@ -27,6 +27,12 @@ import com.pickth.commons.view.fragments.BaseFragment
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class MainFragment: BaseFragment(), MainContract.View {
+    override lateinit var mPresenter: MainContract.Presenter
+
+    override fun setPresenter(presenter: MainContract.Presenter) {
+        mPresenter = presenter
+    }
+
     private var mAdapter = MainItemAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,16 +42,8 @@ class MainFragment: BaseFragment(), MainContract.View {
             adapter = mAdapter
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }
-        var presenter = MainPresenter()
-                .apply {
-                    attachView(this@MainFragment)
-                    test()
-                }
 
         return rootView
-    }
-
-    override fun start() {
     }
 
     override fun showText(msg: String) {
